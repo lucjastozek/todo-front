@@ -17,6 +17,15 @@ function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
     })();
   }
 
+  function handleInPro() {
+    (async () => {
+      await axios.put(`https://todo-backend-r4rc.onrender.com/items/${id}`, {
+        status: "in progress",
+      });
+      await fetchTodos(setTodos);
+    })();
+  }
+
   return (
     <div className="todo-item">
       <p className="description">
@@ -29,6 +38,9 @@ function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
       </p>
       <button className="delete" onClick={handleDelete}>
         Delete
+      </button>
+      <button className="add" onClick={handleInPro}>
+        Change status to in progress
       </button>
     </div>
   );
