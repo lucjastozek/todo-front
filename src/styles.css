@@ -53,3 +53,15 @@ button.delete {
   border-radius: 5px;
   padding: 1vh;
 }
+
+button.add {
+  background-color: green;
+  color: white;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  border: 0;
+  border-radius: 5px;
+  padding: 1vh;
+  display: block;
+  margin: auto;
+}
