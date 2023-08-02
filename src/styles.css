@@ -82,7 +82,7 @@ button.status {
   text-transform: capitalize;
 }
 
-.new {
+span.new {
   color: darkmagenta;
 }
 
@@ -90,7 +90,7 @@ button.new {
   background-color: darkmagenta;
 }
 
-.in {
+span.in {
   color: orange;
 }
 
@@ -98,10 +98,14 @@ button.in {
   background-color: orange;
 }
 
-.complete {
+span.complete {
   color: green;
 }
 
 button.complete {
   background-color: green;
+}
+
+div.complete {
+  opacity: 50%;
 }

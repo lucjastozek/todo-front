@@ -45,7 +45,7 @@ function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
   }
 
   return (
-    <div className="todo-item">
+    <div className={"todo-item " + status}>
       <p className="description">
         {description} {id}
       </p>
