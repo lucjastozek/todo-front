@@ -3,20 +3,14 @@ import Todo from "./Todo";
 
 interface TodoListProps {
   todos: TodoProps[];
+  setTodos: React.Dispatch<React.SetStateAction<TodoProps[]>>;
 }
 
-function TodoList({ todos }: TodoListProps): JSX.Element {
+function TodoList({ todos, setTodos }: TodoListProps): JSX.Element {
   return (
     <div className="todo-list">
       {todos.map((todo: TodoProps) => (
-        <Todo
-          description={todo.description}
-          creationDate={todo.creationDate}
-          dueDate={todo.creationDate}
-          status={todo.status}
-          id={todo.id}
-          key={todo.id}
-        />
+        <Todo todo={todo} setTodos={setTodos} key={todo.id} />
       ))}
     </div>
   );
