@@ -48,10 +48,6 @@ button.delete {
   background-color: red;
   color: white;
   text-transform: uppercase;
-  font-size: 1.5rem;
-  border: 0;
-  border-radius: 5px;
-  padding: 1vh;
 }
 
 button.add {
@@ -64,4 +60,48 @@ button.add {
   padding: 1vh;
   display: block;
   margin: auto;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button-container > button {
+  font-size: 1.5rem;
+  border: 0;
+  border-radius: 5px;
+  padding: 1vh;
+  display: block;
+  margin: 1vw;
+}
+
+button.status {
+  color: white;
+  text-transform: capitalize;
+}
+
+.new {
+  color: darkmagenta;
+}
+
+button.new {
+  background-color: darkmagenta;
+}
+
+.in {
+  color: orange;
+}
+
+button.in {
+  background-color: orange;
+}
+
+.complete {
+  color: green;
+}
+
+button.complete {
+  background-color: green;
 }
