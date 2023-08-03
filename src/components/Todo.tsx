@@ -41,7 +41,7 @@ function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
           )}
         </button>
         <button
-          className="add"
+          className="check"
           onClick={() => {
             if (status !== "complete") {
               handleStatusChange("complete");

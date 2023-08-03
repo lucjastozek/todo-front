@@ -60,6 +60,12 @@ button.delete {
   text-transform: uppercase;
 }
 
+button.check {
+  background-color: #3a7d44;
+  color: white;
+  text-transform: uppercase;
+}
+
 button.info {
   background-color: #457b9d;
   color: white;
