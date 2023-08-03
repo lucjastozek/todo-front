@@ -77,33 +77,24 @@ button.add {
   margin: 1vw;
 }
 
-button.status {
-  color: white;
+select.status {
+  background-color: white;
   text-transform: capitalize;
+  border-radius: 10px;
+  padding: 4px;
+  border: 1px solid black;
 }
 
-span.new {
+select.new {
   color: darkmagenta;
 }
 
-button.new {
-  background-color: darkmagenta;
-}
-
-span.in {
+select.in {
   color: orange;
 }
 
-button.in {
-  background-color: orange;
-}
-
-span.complete {
+select.complete {
   color: green;
-}
-
-button.complete {
-  background-color: green;
 }
 
 div.complete {

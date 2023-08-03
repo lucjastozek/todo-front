@@ -17,32 +17,41 @@ function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
     })();
   }
 
-  function handleInPro() {
+  // function handleInPro() {
+  //   (async () => {
+  //     await axios.put(`https://todo-backend-r4rc.onrender.com/items/${id}`, {
+  //       status: "in progress",
+  //     });
+  //     await fetchTodos(setTodos);
+  //   })();
+  // }
+
+  function handleStatusChange(status: string) {
     (async () => {
       await axios.put(`https://todo-backend-r4rc.onrender.com/items/${id}`, {
-        status: "in progress",
+        status: status,
       });
       await fetchTodos(setTodos);
     })();
   }
 
-  function handleComplete() {
-    (async () => {
-      await axios.put(`https://todo-backend-r4rc.onrender.com/items/${id}`, {
-        status: "complete",
-      });
-      await fetchTodos(setTodos);
-    })();
-  }
+  // function handleComplete() {
+  //   (async () => {
+  //     await axios.put(`https://todo-backend-r4rc.onrender.com/items/${id}`, {
+  //       status: "complete",
+  //     });
+  //     await fetchTodos(setTodos);
+  //   })();
+  // }
 
-  function handleNew() {
-    (async () => {
-      await axios.put(`https://todo-backend-r4rc.onrender.com/items/${id}`, {
-        status: "new",
-      });
-      await fetchTodos(setTodos);
-    })();
-  }
+  // function handleNew() {
+  //   (async () => {
+  //     await axios.put(`https://todo-backend-r4rc.onrender.com/items/${id}`, {
+  //       status: "new",
+  //     });
+  //     await fetchTodos(setTodos);
+  //   })();
+  // }
 
   return (
     <div className={"todo-item " + status}>
@@ -52,10 +61,26 @@ function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
       <p className="creation date">Created: {creationDate}</p>
       <p className="due date">Due: {dueDate}</p>
       <p className="status">
-        Status: <span className={"color " + status}>{status}</span>
+        Status:{" "}
+        <select
+          onChange={(e) => handleStatusChange(e.target.value)}
+          value={status}
+          className={"status " + status}
+        >
+          {" "}
+          <option>
+            <span className="status new">new</span>
+          </option>
+          <option>
+            <span className="status in">in progress</span>
+          </option>
+          <option>
+            <span className="status complete">complete</span>
+          </option>
+        </select>
       </p>
       <div className="button-container">
-        {status !== "new" && (
+        {/* {status !== "new" && (
           <button className="status new" onClick={handleNew}>
             Change status to new
           </button>
@@ -69,7 +94,7 @@ function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
           <button className="status complete" onClick={handleComplete}>
             Change status to complete
           </button>
-        )}
+        )} */}
         <button className="delete" onClick={handleDelete}>
           Delete
         </button>
