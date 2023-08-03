@@ -17,15 +17,6 @@ function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
     })();
   }
 
-  // function handleInPro() {
-  //   (async () => {
-  //     await axios.put(`https://todo-backend-r4rc.onrender.com/items/${id}`, {
-  //       status: "in progress",
-  //     });
-  //     await fetchTodos(setTodos);
-  //   })();
-  // }
-
   function handleStatusChange(status: string) {
     (async () => {
       await axios.put(`https://todo-backend-r4rc.onrender.com/items/${id}`, {
