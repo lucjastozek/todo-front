@@ -1,6 +1,7 @@
 import TodoProps from "../utils/TodoProps";
 import axios from "axios";
 import fetchTodos from "../utils/fetchTodos";
+import { useState } from "react";
 
 interface TodoItemProps {
   todo: TodoProps;
@@ -9,6 +10,7 @@ interface TodoItemProps {
 
 function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
   const { description, creationDate, dueDate, status, id } = todo;
+  const [detail, setDetail] = useState(false);
 
   function handleDelete() {
     (async () => {
@@ -28,35 +30,42 @@ function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
 
   return (
     <div className={"todo-item " + status}>
-      <p className="description">
-        {description} {id}
-      </p>
-      <p className="creation date">Created: {creationDate}</p>
-      <p className="due date">Due: {dueDate}</p>
-      <p className="status">
-        Status:{" "}
-        <select
-          onChange={(e) => handleStatusChange(e.target.value)}
-          value={status}
-          className={"status " + status}
-        >
-          {" "}
-          <option>
-            <span className="status new">new</span>
-          </option>
-          <option>
-            <span className="status in">in progress</span>
-          </option>
-          <option>
-            <span className="status complete">complete</span>
-          </option>
-        </select>
-      </p>
+      <p className="description">{description}</p>
+
       <div className="button-container">
+        <button className="info" onClick={() => setDetail((prev) => !prev)}>
+          {detail ? (
+            <i className="fa-solid fa-x"></i>
+          ) : (
+            <i className="fa-solid fa-info"></i>
+          )}
+        </button>
+        <button className="add" onClick={() => handleStatusChange("complete")}>
+          <i className="fa-solid fa-check"></i>
+        </button>
         <button className="delete" onClick={handleDelete}>
-          Delete
+          <i className="fa-solid fa-trash"></i>
         </button>
       </div>
+      {detail && (
+        <div className="details">
+          <p>ID: {id}</p>
+          <p className="creation date">Created: {creationDate}</p>
+          <p className="due date">Due: {dueDate}</p>
+          <p className="status">
+            Status:{" "}
+            <select
+              onChange={(e) => handleStatusChange(e.target.value)}
+              value={status}
+              className={"status " + status}
+            >
+              <option>new</option>
+              <option>in progress</option>
+              <option>complete</option>
+            </select>
+          </p>
+        </div>
+      )}
     </div>
   );
 }
