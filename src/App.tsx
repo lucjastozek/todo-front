@@ -16,11 +16,13 @@ function App(): JSX.Element {
 
   useEffect(() => {
     let arr = [...todos];
+
     if (overChecked) {
       arr = arr.filter(
         (item) =>
           moment(item.dueDate, "DD/MM/YYYY").diff(
-            moment(moment(), "DD/MM/YYYY")
+            moment(moment(), "DD/MM/YYYY"),
+            "days"
           ) >= 0
       );
     }
