@@ -1,7 +1,7 @@
 import TodoProps from "../utils/TodoProps";
 import axios from "axios";
 import fetchTodos from "../utils/fetchTodos";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import moment from "moment";
 
 interface TodoAddProps {
@@ -12,10 +12,6 @@ function TodoAdd({ setTodos }: TodoAddProps): JSX.Element {
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("2023-08-02");
   const [detail, setDetail] = useState(false);
-
-  useEffect(() => {
-    console.log(moment(date, "YYYY-MM-DD").format("DD/MM/YYYY"));
-  }, [date]);
 
   function handleAdd() {
     (async () => {
@@ -39,6 +35,11 @@ function TodoAdd({ setTodos }: TodoAddProps): JSX.Element {
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Add a new Todo..."
           id="todo-description"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleAdd();
+            }
+          }}
         />{" "}
         {detail && (
           <div className="add-due">

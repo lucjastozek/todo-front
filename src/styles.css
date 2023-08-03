@@ -1,10 +1,22 @@
-* {
+.app {
   font-family: "Open Sans", sans-serif;
+  background-color: #1d3557;
+}
+
+body {
+  margin: 0;
 }
 
 h1 {
   text-align: center;
   font-size: 3rem;
+  color: black;
+}
+.sticky {
+  background-color: #a8dadc;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 
 .todo-list {
@@ -18,7 +30,7 @@ h1 {
   flex-wrap: wrap;
   width: 70vw;
   text-align: left;
-  background-color: #e9e9e9;
+  background-color: white;
   border: 0;
   border-radius: 20px;
   margin: 1vh 0;
@@ -38,18 +50,18 @@ h1 {
 }
 
 .color {
-  color: green;
+  color: #3a7d44;
   text-transform: capitalize;
 }
 
 button.delete {
-  background-color: red;
+  background-color: #e63946;
   color: white;
   text-transform: uppercase;
 }
 
 button.info {
-  background-color: blue;
+  background-color: #457b9d;
   color: white;
 }
 
@@ -91,15 +103,15 @@ select.status {
 }
 
 select.new {
-  color: darkmagenta;
+  color: #b9314f;
 }
 
 select.in {
-  color: orange;
+  color: #e26d5c;
 }
 
 select.complete {
-  color: green;
+  color: #3a7d44;
 }
 
 div.complete {
@@ -113,15 +125,53 @@ div.complete {
   justify-content: center;
   padding: 1vh 0;
   font-size: 1.5rem;
-  width: 100vw;
-  border-bottom: 1px solid black;
+  width: 100%;
   align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  width: 100%;
+  align-items: center;
+  background-color: #a8dadc;
+  padding: 1vh 0;
+}
+
+.filter > input {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+.filter > label {
+  margin: 0 1vw;
+  font-size: 1.5rem;
+}
+
+.sort > label {
+  margin: 0 1vw;
+  font-size: 1.5rem;
+}
+
+.sort > select {
+  text-align: left;
+  background-color: white;
+  border: 0;
+  border-radius: 10px;
+  margin: 1vh 0;
+  font-size: 1.5rem;
+  padding: 4px;
 }
 
 .inputs > input {
   width: 50vw;
   text-align: left;
-  background-color: #e9e9e9;
+  background-color: white;
   border: 0;
   border-radius: 10px;
   margin: 1vh 0;
@@ -129,7 +179,7 @@ div.complete {
 }
 
 button.add {
-  background-color: green;
+  background-color: #3a7d44;
   color: white;
   text-transform: capitalize;
   font-size: 1.5rem;
@@ -141,7 +191,7 @@ button.add {
 }
 
 input {
-  background-color: #e9e9e9;
+  background-color: white;
   font-size: 1.5rem;
   border: 0;
   padding: 1vh;
@@ -164,6 +214,7 @@ input {
 .details {
   font-size: 2.5vh;
   text-align: left;
+  width: 100vw;
 }
 
 .add-due,

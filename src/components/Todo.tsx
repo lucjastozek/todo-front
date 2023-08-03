@@ -40,8 +40,21 @@ function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
             <i className="fa-solid fa-info"></i>
           )}
         </button>
-        <button className="add" onClick={() => handleStatusChange("complete")}>
-          <i className="fa-solid fa-check"></i>
+        <button
+          className="add"
+          onClick={() => {
+            if (status !== "complete") {
+              handleStatusChange("complete");
+            } else {
+              handleStatusChange("in progress");
+            }
+          }}
+        >
+          {status === "complete" ? (
+            <i className="fa-solid fa-arrow-rotate-left"></i>
+          ) : (
+            <i className="fa-solid fa-check"></i>
+          )}
         </button>
         <button className="delete" onClick={handleDelete}>
           <i className="fa-solid fa-trash"></i>
