@@ -35,24 +35,6 @@ function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
     })();
   }
 
-  // function handleComplete() {
-  //   (async () => {
-  //     await axios.put(`https://todo-backend-r4rc.onrender.com/items/${id}`, {
-  //       status: "complete",
-  //     });
-  //     await fetchTodos(setTodos);
-  //   })();
-  // }
-
-  // function handleNew() {
-  //   (async () => {
-  //     await axios.put(`https://todo-backend-r4rc.onrender.com/items/${id}`, {
-  //       status: "new",
-  //     });
-  //     await fetchTodos(setTodos);
-  //   })();
-  // }
-
   return (
     <div className={"todo-item " + status}>
       <p className="description">
@@ -80,21 +62,6 @@ function Todo({ todo, setTodos }: TodoItemProps): JSX.Element {
         </select>
       </p>
       <div className="button-container">
-        {/* {status !== "new" && (
-          <button className="status new" onClick={handleNew}>
-            Change status to new
-          </button>
-        )}
-        {status !== "in progress" && (
-          <button className="status in" onClick={handleInPro}>
-            Change status to in progress
-          </button>
-        )}{" "}
-        {status !== "complete" && (
-          <button className="status complete" onClick={handleComplete}>
-            Change status to complete
-          </button>
-        )} */}
         <button className="delete" onClick={handleDelete}>
           Delete
         </button>
